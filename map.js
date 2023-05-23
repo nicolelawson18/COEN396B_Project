@@ -1,5 +1,4 @@
 async function mapTrash(year){
-  console.log(year);
   var map
 
   try{
@@ -54,7 +53,7 @@ async function mapTrash(year){
       opacity: 1,
       color: 'white',
       dashArray: '3',
-      fillOpacity: 0.7,
+      fillOpacity: 1.0,
       fillColor: getColor(feature.properties[year].tons_disposed / feature.properties[year].population * 1000)
     };
   }
@@ -98,7 +97,6 @@ async function mapTrash(year){
   }
 
   map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
-
 
   const legend = L.control({position: 'bottomright'});
 
