@@ -29,7 +29,7 @@ async function mapTrash(year){
   };
 
   info.update = function (props) {
-    const contents = props ? `<b>${props.name}</b><br />${Math.round(props[year].tons_disposed / props[year].population * 1000)} tons per 1000 people` : 'Hover over a state';
+    const contents = props ? `<b>${props.name}</b><br />${Math.round(props[year].tons_disposed / props[year].population * 1000)} tons per 1000 people` : 'Hover over a county';
     this._div.innerHTML = `<h4>California Trash Density</h4>${contents}`;
   };
 
@@ -73,8 +73,7 @@ async function mapTrash(year){
     info.update(layer.feature.properties);
   }
 
-  /* global statesData */
-  const geojson = L.geoJson(statesData, {
+  const geojson = L.geoJson(countyData, {
     style,
     onEachFeature
   }).addTo(map);

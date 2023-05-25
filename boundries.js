@@ -1,4 +1,4 @@
-var statesData = {
+var countyData = {
   "type": "FeatureCollection",
   "features": [
     {
