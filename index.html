@@ -77,7 +77,7 @@
           // If paused, resume the iteration
           isPaused = false;
           this.textContent = 'Pause';
-          intervalId = setInterval(iterateYears, 1000); // Delay between each iteration (1 second)
+          intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
         } else {
           // If not paused, pause the iteration
           isPaused = true;
@@ -87,7 +87,7 @@
       });
 
       // Start the iteration
-      intervalId = setInterval(iterateYears, 1000); // Delay between each iteration (1 second)
+      intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
     });
   </script>
 	<script src="map.js"></script>
@@ -97,7 +97,7 @@
   <input type="text" id="yearInput">
   <button onclick="validateYear()">Jump</button>
   <p id="errorText" style="color: red;"></p>
-
+	<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/13987373"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 	<canvas id="chart"></canvas>
 
   <script src="gdp.js"></script>

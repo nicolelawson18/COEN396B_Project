@@ -15,7 +15,7 @@ function validateYear() {
   myFunction(year);
 }
 
-function myFunction(year) {
+function mainFunction(year) {
   // Your custom function logic here
   window.currentYearIndex = year - 1994;
   var yearElement = document.getElementById('year');
