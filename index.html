@@ -1,106 +1,31 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-	<base target="_top">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <title>Main Vizualization</title>
+  <style>
+    .container {
+      display: flex;
+    }
 
-	<title>Final Project</title>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-	</style>
-
-	<style>#map { width: 800px; height: 500px; }
-.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 0px rgba(0,0,0,0.2); border-radius: 0px; } .info h4 { margin: 0 0 5px; color: #777; }
-.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+    .iframe-wrapper {
+      flex: 1;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
+	<div class="container">
+    <div class="iframe-wrapper">
+      <iframe src="map.html" frameborder="0" width="750px" height="750px"></iframe>
+    </div>
+    <div class="iframe-wrapper">
+        <iframe src="BarChartRace.html" frameborder="0" width="500ps" height="500px"></iframe>
+    </div>
+  </div>
 
-<div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="position: relative; outline-style: none;" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"></div></div></div></div>
-
-<script type="text/javascript" src="boundries.js"></script>
-<body>
-  <h1 id="year">1995</h1>
-  <button id="pauseButton">Pause</button>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Place the JavaScript code here to ensure it runs after the page has finished loading
-      // ...
-
-      // Your existing JavaScript code
-      var years = ['1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004',
-                   '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014',
-                   '2015', '2016', '2017', '2018'];
-
-      window.currentYearIndex = 0; // Index of the current year
-      var isPaused = false; // Flag to indicate if iteration is paused
-      var intervalId; // Variable to store the interval ID
-
-      function displayYear() {
-        var yearElement = document.getElementById('year');
-        yearElement.textContent = years[window.currentYearIndex];
-				window.year =  years[window.currentYearIndex];
-				mapTrash(year)
-      }
-
-      function iterateYears() {
-        if (isPaused) {
-          return; // If paused, do not proceed with iteration
-        }
-
-        displayYear();
-
-        window.currentYearIndex++;
-        if (window.currentYearIndex >= years.length) {
-          currentYearIndex = 0; // Restart iteration from the beginning
-        }
-      }
-
-      // Event listener for pause button
-      document.getElementById('pauseButton').addEventListener('click', function() {
-        if (isPaused) {
-          // If paused, resume the iteration
-          isPaused = false;
-          this.textContent = 'Pause';
-          intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
-        } else {
-          // If not paused, pause the iteration
-          isPaused = true;
-          this.textContent = 'Resume';
-          clearInterval(intervalId);
-        }
-      });
-
-      // Start the iteration
-      intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
-    });
-  </script>
-	<script src="map.js"></script>
-	<script src="jumpToYear.js"></script>
-	<h1>Jump to a specific year:</h1>
-  <label for="yearInput">Enter a year (between 1995 and 2018):</label>
-  <input type="text" id="yearInput">
-  <button onclick="validateYear()">Jump</button>
-  <p id="errorText" style="color: red;"></p>
-	<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/13987373"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	<canvas id="chart"></canvas>
-
-  <script src="gdp.js"></script>
+	<div id="panel">
+    <iframe src="gdp.html" frameborder="0" width="500px" height="500px"></iframe>
+  </div>
 </body>
 
 

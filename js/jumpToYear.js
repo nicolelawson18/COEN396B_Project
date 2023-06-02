@@ -12,7 +12,7 @@ function validateYear() {
   errorText.textContent = ''; // Clear any previous error message
 
   // Call the function from another JavaScript file
-  myFunction(year);
+  mainFunction(year);
 }
 
 function mainFunction(year) {
