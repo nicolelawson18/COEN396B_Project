@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         },
         y: {
+          suggestedMin: 0,
           display: true,
           title: {
             display: true,
