@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     data: {
       labels: years,
       datasets: [{
-        label: "California Per Capita Waste Disposed 1995 to 2018",
+        label: "California Per Capita Waste Disposed",
         data: wasteData,
         fill: false,
         borderColor: "rgb(75, 75, 192)",

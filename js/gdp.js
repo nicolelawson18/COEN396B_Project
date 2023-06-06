@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     data: {
       labels: years,
       datasets: [{
-        label: "California Per Capita GDP From 1995 to 2018",
+        label: "California Per Capita GDP",
         data: gdpData,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
