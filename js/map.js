@@ -2,7 +2,7 @@ async function mapTrash(year){
   var map
 
   try{
-    map = L.map('map').setView([37.5, -120], 6);
+    map = L.map('map').setView([37.25, -120], 6);
   }
   catch(e){
     var container = L.DomUtil.get('map');
