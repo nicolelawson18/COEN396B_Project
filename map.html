@@ -39,7 +39,7 @@
 <script type="text/javascript" src="js/boundries.js"></script>
 <body>
   <h1 id="year">1995</h1>
-  <button id="pauseButton">Pause</button>
+  <button id="pauseButton">Resume</button>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Place the JavaScript code here to ensure it runs after the page has finished loading
@@ -51,8 +51,10 @@
                    '2015', '2016', '2017', '2018'];
 
       window.currentYearIndex = 0; // Index of the current year
-      var isPaused = false; // Flag to indicate if iteration is paused
+      var isPaused = true; // Flag to indicate if iteration is paused
       var intervalId; // Variable to store the interval ID
+			window.currentYearIndex = 1;
+			mapTrash('1995')
 
       function displayYear() {
         var yearElement = document.getElementById('year');
@@ -65,13 +67,14 @@
         if (isPaused) {
           return; // If paused, do not proceed with iteration
         }
-
+				else{
         displayYear();
 
-        window.currentYearIndex++;
-        if (window.currentYearIndex >= years.length) {
-          currentYearIndex = 0; // Restart iteration from the beginning
-        }
+	        window.currentYearIndex++;
+	        if (window.currentYearIndex >= years.length) {
+	          currentYearIndex = 0; // Restart iteration from the beginning
+	        }
+				}
       }
 
       // Event listener for pause button
@@ -90,7 +93,7 @@
       });
 
       // Start the iteration
-      intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
+      //intervalId = setInterval(iterateYears, 1000); // Delay between each iteration in ms
     });
   </script>
 	<script src="js/map.js"></script>
