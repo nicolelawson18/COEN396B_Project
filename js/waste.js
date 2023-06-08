@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     data: {
       labels: years,
       datasets: [{
-        label: "California Per Capita Waste",
+        label: "California Tons of Waste Per Capita",
         data: wasteData,
         fill: false,
         borderColor: "rgb(75, 75, 150)",
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
           display: true,
           title: {
             display: true,
-            text: "Tonns of Waste / Normized Sentiment Score"
+            text: "Tonns of Waste Per Capita / Normized Sentiment Score"
           }
         }
       }
